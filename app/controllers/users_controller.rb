@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
 
+
+  before_action :retrieve_user_from_jwt, except: [:create]
+
   def show
     @user = User.find(params[:id])
     render json:  @user
