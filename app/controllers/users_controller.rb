@@ -36,6 +36,11 @@ class UsersController < ApplicationController
     render status: 200
   end
 
+  def name
+    @user = User.find(params[:id])
+    render json: @user.name
+  end
+
 
   private
 

@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   has_secure_password
 
+  has_many :jobs
+
   before_save :capitalize_names
 
   validates :first_name, presence: true
@@ -9,6 +11,12 @@ class User < ApplicationRecord
             presence: true,
             uniqueness: true,
             email: true #this comes from email_validator gem
+
+
+  def name
+    "#{self.first_name} #{self.last_name}"
+  end
+
 
   private
 
