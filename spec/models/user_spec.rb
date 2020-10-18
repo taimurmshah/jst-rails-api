@@ -15,7 +15,7 @@ RSpec.describe User, type: :model do
     it 'ensures email presence' do
       user = User.new(first_name: "Taimur", last_name: "Shah", password: "GRAPES")
       expect(user.valid?).to eq(false)
-      end
+    end
 
     it 'ensures password presence' do
       user = User.new(first_name: "Taimur", last_name: "Shah", email: "tshah@gmail.com")
@@ -29,7 +29,5 @@ RSpec.describe User, type: :model do
   end
 
   context 'scope tests' do
-
   end
-
 end

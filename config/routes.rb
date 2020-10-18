@@ -8,11 +8,6 @@ Rails.application.routes.draw do
 
   resources :jobs, only: [:index, :show, :create, :update, :destroy]
 
-
   get "users/:id/name", to: "users#name"
   get "users/:user_id/jobs/:id/check-it-out", to: "jobs#check"
-
-
-
-
 end

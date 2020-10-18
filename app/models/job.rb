@@ -3,8 +3,6 @@ class Job < ApplicationRecord
 
   has_many :employees, dependent: :destroy
 
-
-
   validates :company, presence: true
   validates :website, presence: true
   validates :linkedin, presence: true
@@ -15,5 +13,4 @@ class Job < ApplicationRecord
   def check_it_out
     "Check out this job I just applied to! Here's the link: #{self.link}"
   end
-
 end

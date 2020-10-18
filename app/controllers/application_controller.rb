@@ -1,12 +1,11 @@
 class ApplicationController < ActionController::API
-
   #  for jwt auth
 
   def encode_token(payload)
     JWT.encode(payload, "my_secret")
   end
 
-  #gets and returns the header
+  # gets and returns the header
   def auth_header
     request.headers["Authorization"]
   end
@@ -29,5 +28,4 @@ class ApplicationController < ActionController::API
   def is_logged_in?
     !!retrieve_user_from_jwt
   end
-
 end

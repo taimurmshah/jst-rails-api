@@ -1,11 +1,9 @@
 class UsersController < ApplicationController
-
-
   before_action :retrieve_user_from_jwt, except: [:create]
 
   def show
     @user = User.find(params[:id])
-    render json:  @user
+    render json: @user
   end
 
   def index
@@ -18,9 +16,9 @@ class UsersController < ApplicationController
     puts @user
     if @user.valid?
       @user.save
-      render json: {user: @user}, status: 201
+      render json: { user: @user }, status: 201
     else
-      render json: {errors: @user.errors.messages}
+      render json: { errors: @user.errors.messages }
     end
   end
 
@@ -44,12 +42,10 @@ class UsersController < ApplicationController
     render json: @user.name
   end
 
-
   private
 
-  #strong params
+  # strong params
   def user_params
     params.require(:user).permit(:id, :first_name, :last_name, :email, :password)
   end
-
 end
