@@ -19,6 +19,8 @@ gem 'bcrypt', '~> 3.1.7'
 #for simple email validation
 gem 'email_validator'
 
+gem "jwt"
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
