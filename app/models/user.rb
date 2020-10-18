@@ -13,6 +13,8 @@ class User < ApplicationRecord
             email: true #this comes from email_validator gem
 
 
+  scope :taimur, -> { where(first_name: "Taimur") }
+
   def name
     "#{self.first_name} #{self.last_name}"
   end
