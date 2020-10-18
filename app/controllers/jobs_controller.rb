@@ -22,9 +22,13 @@ class JobsController < ApplicationController
     else
       render json: {errors: @job.errors.messages}, status: 400
     end
-
   end
 
+
+  def check
+    @job = Job.find_by(user_id: params[:user_id], id: params[:id])
+    render json: @job.check_it_out
+  end
 
 private
 

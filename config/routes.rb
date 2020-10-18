@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   end
 
   get "users/:id/name", to: "users#name"
+  get "users/:user_id/jobs/:id/check-it-out", to: "jobs#check"
 
 
 

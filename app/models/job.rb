@@ -1,6 +1,9 @@
 class Job < ApplicationRecord
   belongs_to :user
-  has_many :employees
+
+  has_many :employees, dependent: :destroy
+
+
 
   validates :company, presence: true
   validates :website, presence: true
@@ -8,5 +11,9 @@ class Job < ApplicationRecord
   validates :link,
             presence: true,
             uniqueness: true
+
+  def check_it_out
+    "Check out this job I just applied to! Here's the link: #{self.link}"
+  end
 
 end
